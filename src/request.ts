@@ -1,6 +1,6 @@
 import axios from "axios";
 
-alert(process.env.NODE_ENV);
+console.log(process.env.NODE_ENV);
 
 const myAxios = axios.create({
   // 区分开发和线上环境
@@ -48,6 +48,7 @@ myAxios.interceptors.response.use(
   function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
+    console.log(error);
     return Promise.reject(error);
   }
 );
